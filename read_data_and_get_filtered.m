@@ -1,4 +1,4 @@
-function [ samples,segment ] = read_data_and_get_filtered( I_filename, Q_filename )
+function [ samples ] = read_data_and_get_filtered( I_filename, Q_filename )
 %READ_DATA_AND_GET_FILTERED 此处显示有关此函数的摘要
 %   此处显示详细说明
 fs = 200000;
@@ -24,8 +24,8 @@ plot(t(3*fs:length(I)-3*fs), smoothed(3*fs:length(I)-3*fs));
 
 
 num_point = input('总共有多少个segment？');
-if num_point==0
-    samples=[];
+if num_point == 0
+    samples = segment;
 else
     samples = cell(1,num_point);
     for ll = 1:num_point
